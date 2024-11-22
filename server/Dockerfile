@@ -13,7 +13,9 @@ COPY server/tsconfig.json ./server/
 # COPY server/start.sh ./  
 
 # Install dependencies
-RUN npm install
+#aliyun: https://registry.npmmirror.com/
+#ustc: https://npmreg.proxy.ustclug.org/
+RUN npm install --registry=https://registry.npmmirror.com/ --verbose
 
 # Install Playwright browsers and dependencies
 RUN npx playwright install --with-deps chromium

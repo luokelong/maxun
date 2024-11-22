@@ -7,7 +7,9 @@ COPY package*.json ./
 COPY maxun-core ./maxun-core
 
 # Install dependencies
-RUN npm install
+#aliyun: https://registry.npmmirror.com/
+#ustc: https://npmreg.proxy.ustclug.org/
+RUN npm install --registry=https://registry.npmmirror.com/ --verbose
 
 # Copy frontend source code and config
 COPY src ./src
